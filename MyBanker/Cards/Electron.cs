@@ -4,20 +4,19 @@ using System.Text;
 
 namespace MyBanker
 {
-    class Electron : Maestro
+    class Electron : Debit
     {
         // parametrized constructor declaration!
         public Electron (string type, string bal, string loca, int debit) : base(type, bal, loca)
         {
             // initialization!
-            debitLimitMdr = debit;
+            DebitLimitMdr = debit;
         }
 
         // auto implemented properties with get & set accessor  -  Encapsulation!
-        public int debitLimitMdr { get; set; }
+        public int DebitLimitMdr { get; set; }
         public override string ToString()
         {
-            return base.ToString() + "\nthis card have a debit limit (DKK) pr. mdr.: " + debitLimitMdr;
+            return base.ToString() + "\nthis card have a debit limit (DKK) pr. mdr.: " + DebitLimitMdr;
         }
-    }
 }
