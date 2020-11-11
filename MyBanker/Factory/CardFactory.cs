@@ -20,6 +20,8 @@ namespace MyBanker
                     return null;
             }
         }
+
+        // The body of interface methods is provided here!
         public string GetCardNumber(string prefix)
         {
             Random randNum = new Random();

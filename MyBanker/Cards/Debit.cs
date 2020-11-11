@@ -4,21 +4,22 @@ using System.Text;
 
 namespace MyBanker
 {
-    // This class represent electron!
-    class Electron : Debit
+    // This class represents debit!
+    class Debit : ATMcard
     {
         // parametrized constructor declaration!
-        public Electron (string type, string bal, string loca, int debit) : base(type, bal, loca)
+        public Debit (string type, string bal, string loca) : base(type, bal)
         {
             // initialization!
-            DebitLimitMdr = debit;
+            Location = loca;
         }
 
         // auto implemented properties with get & set accessor  -  Encapsulation!
-        public int DebitLimitMdr { get; set; }
+        public string Location { get; set; }
+
         public override string ToString()
         {
-            return base.ToString() + "\nthis card have a debit limit (DKK) pr. mdr.: " + DebitLimitMdr;
+            return base.ToString() + "\nthis card can be use: " + Location;
         }
     }
 }

@@ -5,25 +5,18 @@ using Microsoft.VisualBasic;
 
 namespace MyBanker
 {
-    class Mastercard : ATMcard
+    // This class represents mastercard!
+    class Mastercard : Credit
     {
         // parametrized constructor declaration!
-        public Mastercard (string type, string bal, string maxD, string rating, int credit) : base (type, bal)
+        public Mastercard (string type, string bal, string maxD, string rating, int credit) : base (type, bal, maxD, rating, credit)
         {
-            // initialization!
-            maxDay = maxD;
-            creditRating = rating;
-            creditLimitMdr = credit;
-        }
 
-        // auto implemented properties with get & set accessor  -  Encapsulation!
-        public string maxDay { get; set; }
-        public string creditRating { get; set; }
-        public int creditLimitMdr { get; set; }
+        }
 
         public override string ToString()
         {
-            return base.ToString() + "\ncredit rating: " + creditRating + "\nmax amount: " + maxDay + "\ncredit limit (DKK) pr. mdr: " + creditLimitMdr;
+            return base.ToString();
         }
     }
 }

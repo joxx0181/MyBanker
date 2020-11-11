@@ -6,24 +6,24 @@ using System.Text;
 
 namespace MyBanker
 {
+    // This class represents atmcard!
     class ATMcard : PaymentCard
     {
         // parametrized constructor declaration!
         public ATMcard (string type, string bal)
         {
             // initialization!
-            cardType = type;
-            balance = bal;
+            CardType = type;
+            Balance = bal;
         }
 
         // auto implemented properties with get & set accessor  -  Encapsulation!
-        public string cardType { get; set; }
-        public string balance { get;  set; }
+        public string CardType { get; set; }
+        public string Balance { get;  set; }
 
         public override string ToString()
         {
-            return "cardtype: " + cardType + "\nbalance calulated: " + balance;
+            return "cardtype: " + CardType + "\nbalance calulated: " + Balance;
         }
     }
 }
-ø
