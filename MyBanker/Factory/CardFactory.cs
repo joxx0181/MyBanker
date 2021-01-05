@@ -4,6 +4,8 @@ using System.Linq;
 namespace MyBanker
 {
     // factory class!
+    
+    //Interfacene er fine, men burde ligge på kortene og ikke fabrikken!
     public class CardFactory : ICardNumber, IExpire
     {
         // return the required objects!
@@ -17,11 +19,13 @@ namespace MyBanker
                 case "mastercard": return new Mastercard("Mastercard creditcard", "monthly", "withdraw up tp 5000 DKK a day", "need approved for credit", 40000);
                 case "visa": return new Visa("Visa creditcard", "daily", "-", "need approved for credit", 25000, 5000);
                 default:
-                    return null;
+                    return null; //Det er lidt farligt at returnere null, du skulle måske hellere smide en exception
             }
         }
 
         // The body of interface methods is provided here!
+        
+        //IKKE public, nu kan alle jo bare generere et Cardnumber!!! - Det er farligt
         public string GetCardNumber(string prefix)
         {
             Random randNum = new Random();
@@ -43,6 +47,7 @@ namespace MyBanker
                     }
                     break;
                 case "p3":
+                //Hvorfor alle de Random initialiseringer?
                     Random p3rand = new Random();
                     string[] p3 = new string[] { "4026", "417500", "4508", "4844", "4913", "4917" };
                     for (int i = 0; i < 1; i++)
